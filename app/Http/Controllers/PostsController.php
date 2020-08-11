@@ -8,7 +8,8 @@ use Intervention\Image\Facades\Image;
 class PostsController extends Controller
 {
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->middleware('auth');
     }
 
@@ -17,16 +18,17 @@ class PostsController extends Controller
         return view('posts.create');
     }
 
-    public function store(){
+    public function store()
+    {
 
         $data = request()->validate([
             'caption' => 'required',
             'image' => 'required|image',
         ]);
-        
-        $imagePath = request('image')->store('uploads','public');
-        
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200,1200); //  resize images to fit aspect ratio
+
+        $imagePath = request('image')->store('uploads', 'public');
+
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200); //  resize images to fit aspect ratio
         $image->save();
 
         auth()->user()->posts()->create([
@@ -34,6 +36,13 @@ class PostsController extends Controller
             'image' => $imagePath,
         ]);
 
-        return redirect('/profile/'. auth()->user()->id);
+        return redirect('/profile/' . auth()->user()->id);
+    }
+
+    public function show(\App\Post $post)
+    {
+        return view('posts.show', [
+            'post' => $post,
+        ]);
     }
 }
