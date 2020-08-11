@@ -7,15 +7,18 @@
             <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRAFrQ8xUDyhaG8mFZzOr8FJg3I-lcZPYa4VQ&usqp=CAU" />
         </div>
         <div class="col-9 pt-5">
-            <div><h1>MatinMN</h1></div>
+            <div class="d-flex justify-content-between align-items-baseline">
+                <h1>{{$user->username}}</h1>
+                <a href="">Add New Post</a>
+            </div>
             <div class="d-flex">
                 <div class="pr-5"><strong>24</strong> posts</div>
                 <div class="pr-5"><strong>54</strong> followers</div>
                 <div class="pr-5"><strong>68</strong> following</div>
             </div>
-            <div class="pt-4 font-weight-bold">matinmn.com</div>
-            <div>Nunc massa nisl, vestibulum ut nisi vehicula, bibendum scelerisque nisl. Pellentesque vitae nibh sit amet augue finibus elementum. Vivamus consecte.</div>
-            <div><a href="#">www.google.com</a></div>
+        <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
+        <div>{{ $user->profile->description }}</div>
+        <div><a href="#">{{ $user->profile->url }}</a></div>
         </div>
     </div>
     <div class="row">
