@@ -22,9 +22,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-4"><img src="https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="" class="w-100"></div>
-        <div class="col-4"><img src="https://images.pexels.com/photos/241316/pexels-photo-241316.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="w-100"></div>
-        <div class="col-4"><img src="https://cdn.autoportal.com/img/new-cars-gallery/renault/kwid/colors/403a91ded24bd7ca07213b427ba1b0a6.jpg" alt="" class="w-100"></div>
+        @foreach ($user->posts as $post)
+            <div class="col-4"><img src="{{ url('storage/'.$post->image) }}" alt="{{ $post->caption }}" class="w-100"></div>
+        @endforeach
     </div>
 </div>
 @endsection
