@@ -23,7 +23,7 @@
     </div>
     <div class="row">
         @foreach ($user->posts as $post)
-            <div class="col-4"><img src="{{ url('storage/'.$post->image) }}" alt="{{ $post->caption }}" class="w-100"></div>
+            <div class="col-4 mb-5"><img src="{{ url('storage/'.$post->image) }}" alt="{{ $post->caption }}" class="w-100"></div>
         @endforeach
     </div>
 </div>
