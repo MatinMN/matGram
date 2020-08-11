@@ -19,4 +19,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
+Route::get('/posts', 'PostsController@create')->name('posts.create');
+
+Route::get('/profile/{user}', 'ProfileController@index')->name('post.show');
