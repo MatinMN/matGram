@@ -16,6 +16,10 @@
                         <a href="{{ url("profile/{$post->user->id}")}}">
                             <span class="text-dark">{{ $post->user->username }}</span>
                         </a>
+                        <svg width="0.5em" height="0.5em" viewBox="0 0 16 16" class="bi bi-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="8" r="8"/>
+                        </svg>
+                        <a href="">Follow</a>
                     </h5>
                 </div>
             </div>

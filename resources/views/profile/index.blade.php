@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-3 p-5">
-            <img class="rounded-circle w-100" src="{{ url("/storage/{$user->profile->image}") }}" />
+            <img class="rounded-circle w-100" src="{{ url("/storage/{$user->profile->profileImage()}") }}" />
         </div>
         <div class="col-9 pt-5">
             <div class="d-flex justify-content-between align-items-baseline">
